@@ -8,11 +8,13 @@ LinearAllocator::~LinearAllocator(){}
 
 void* LinearAllocator::allocate(size_t size, size_t alignment) {
 	
-	size_t padding{ AllocationUtil::calculatePadding(blockPtrValue+offSet,alignment) };
+	void* alignedAddress{ AllocationUtil::alignAddress(blockPtrValue+offSet,alignment) };
+	uintptr_t adjustment{ AllocationUtil::calculateAdjustment(blockPtrValue + offSet,alignment) };
 
-	if (offSet + padding + size > maxSize) return nullptr;
-	void* returnAddress{ (void*)(blockPtrValue + offSet + padding) };
-	offSet += padding + size;
+	if (offSet + adjustment + size > maxSize) return nullptr;
+	void* returnAddress{ (void*)(blockPtrValue + offSet + adjustment) };
+	offSet += adjustment + size;
+	amount_of_allocations++;
 	return returnAddress;
 }
 
