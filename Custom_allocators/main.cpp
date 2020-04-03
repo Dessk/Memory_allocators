@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LinearAllocator.h"
+#include "StackAllocator.h"
 
 typedef struct {
 	int x, y;
@@ -18,6 +19,17 @@ int main() {
 	test2->x = 3;
 	test2->y = 4;
 	std::cout << test2->x << " " << test2->y << '\n';
+
+	StackAllocator stackAllocator{ 128 };
+	TestStructure* test3{ (TestStructure*)stackAllocator.allocate(sizeof(TestStructure),4) };
+	if ((reinterpret_cast<uintptr_t>(test3) % 4)) std::cout << "B³¹d" << '\n';
+	test3->x = 5;
+	test3->y = 6;
+	//std::cout << test3<< '\n';
+	stackAllocator.deallocate();
+	TestStructure* test4{ (TestStructure*)stackAllocator.allocate(sizeof(TestStructure),4) };
+	//std::cout << test4 << '\n';
+
 
 
 }

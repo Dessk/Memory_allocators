@@ -11,6 +11,7 @@ protected:
 
 public:
 	Allocator(size_t maxSize);
+
 	virtual void* allocate(size_t size, size_t alignment) = 0;
 	
 	virtual inline size_t getMaxSize() const final { return maxSize; }
