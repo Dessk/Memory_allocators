@@ -18,30 +18,39 @@
     <ClCompile Include="main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="Allocator.cpp">
+    <ClCompile Include="src\Allocator.cpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClCompile>
-    <ClCompile Include="LinearAllocator.cpp">
+    <ClCompile Include="src\LinearAllocator.cpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClCompile>
-    <ClCompile Include="StackAllocator.cpp">
+    <ClCompile Include="src\PoolAllocator.cpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StackAllocator.cpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Allocator.h">
+    <ClInclude Include="includes\StackAllocator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="LinearAllocator.h">
+    <ClInclude Include="includes\PoolAllocator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="Error.h">
+    <ClInclude Include="includes\LinearAllocator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="MemoryAllocationUtility.h">
+    <ClInclude Include="includes\Allocator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="StackAllocator.h">
+    <ClInclude Include="includes\Utility\Error.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Utility\PoolStack.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Utility\MemoryAllocationUtility.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

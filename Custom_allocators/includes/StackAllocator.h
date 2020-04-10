@@ -4,12 +4,11 @@
 class StackAllocator : public Allocator  {
 private:
 	struct HEADER { uint8_t adjustment; void* prevAllocation; };
-	void* prevAllocation;
-	HEADER* topHeaderPtr;
+	void* savedAddress;
 public:
 	StackAllocator(size_t maxSize);
-	void* allocate(size_t size, size_t alignmen);
-	void* deallocate();
+	void* allocate(size_t size, uint8_t alignment);
+	void deallocate();
 	~StackAllocator();
 
 };

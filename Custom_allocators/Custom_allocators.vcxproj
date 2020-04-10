@@ -138,17 +138,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Allocator.cpp" />
-    <ClCompile Include="LinearAllocator.cpp" />
+    <ClCompile Include="src\Allocator.cpp" />
+    <ClCompile Include="src\LinearAllocator.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="StackAllocator.cpp" />
+    <ClCompile Include="src\PoolAllocator.cpp" />
+    <ClCompile Include="src\StackAllocator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Allocator.h" />
-    <ClInclude Include="Error.h" />
-    <ClInclude Include="LinearAllocator.h" />
-    <ClInclude Include="MemoryAllocationUtility.h" />
-    <ClInclude Include="StackAllocator.h" />
+    <ClInclude Include="includes\Allocator.h" />
+    <ClInclude Include="includes\Utility\Error.h" />
+    <ClInclude Include="includes\LinearAllocator.h" />
+    <ClInclude Include="includes\Utility\MemoryAllocationUtility.h" />
+    <ClInclude Include="includes\PoolAllocator.h" />
+    <ClInclude Include="includes\Utility\PoolStack.h" />
+    <ClInclude Include="includes\StackAllocator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
